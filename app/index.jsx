@@ -1,14 +1,9 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { useNavigation } from 'expo-router'
+import { View, Text, Button, Modal } from 'react-native'
+import React, { useState } from 'react'
 
 const index = () => {
 
-    const data = {
-        title: 'Home',
-        description: 'This is the home page of the application.'
-    }
-    console.log(data.title)
+    const [visible, setVisible] = useState(false)
 
     return (
         <View
@@ -32,6 +27,15 @@ const index = () => {
             >
                 Welcome to the home Page.
             </Text>
+            <Button title='Open' onPress={() => setVisible(true)} />
+            <Modal
+                visible={visible}
+                onRequestClose={() => setVisible(false)}
+                animationType='slide'
+            >
+                <Text>DATA</Text>
+                <Button title="Close" onPress={() => setVisible(false)} />
+            </Modal>
         </View>
     )
 }
