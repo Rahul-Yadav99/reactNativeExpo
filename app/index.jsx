@@ -21,7 +21,7 @@ const index = () => {
                     {
                         color: 'white',
                         fontSize: 20,
-                        fontWeight: 900
+                        fontWeight: 500
                     }
                 }
             >
