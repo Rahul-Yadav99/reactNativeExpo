@@ -1,41 +1,38 @@
-import { View, Text, Button, Modal } from 'react-native'
+import { View, Text, Button, Modal, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
+import { FlatList } from 'react-native'
 
 const index = () => {
-
-    const [visible, setVisible] = useState(false)
-
+    const count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    function findVlue(v) {
+        console.log(v)
+    }
     return (
-        <View
-            style={
-                {
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    backgroundColor: 'dodgerblue'
-                }
-            }
-        >
-            <Text
-                style={
-                    {
-                        color: 'white',
-                        fontSize: 20,
-                        fontWeight: 500
-                    }
-                }
-            >
-                Welcome to the home Page.
-            </Text>
-            <Button title='Open' onPress={() => setVisible(true)} />
-            <Modal
-                visible={visible}
-                onRequestClose={() => setVisible(false)}
-                animationType='slide'
-            >
-                <Text>DATA</Text>
-                <Button title="Close" onPress={() => setVisible(false)} />
-            </Modal>
+        // <ScrollView showsHorizontalScrollIndicator={false} horizontal>
+        //     {
+        //         count.map(function (item, index) {
+        //             return (
+        //                 <View style={{ height: 80, width: 80, backgroundColor: (index % 2 === 0) ? "dodgerblue" : "deeppink", borderRadius: '100%', alignItems: 'center', justifyContent: 'center', marginHorizontal: 2 }}>
+        //                     <Text style={{ color: 'white' }}>{item}</Text>
+        //                 </View>
+        //             )
+        //         })
+        //     }
+        // </ScrollView>
+        <View>
+            <FlatList
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{ alignItems: 'center' }}
+                data={count}
+                numColumns={4}
+                renderItem={function ({ item, index }) {
+                    return (
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => findVlue(index)} style={{ height: 80, width: 80, backgroundColor: (index % 2 === 0) ? "dodgerblue" : "deeppink", borderRadius: '100%', alignItems: 'center', justifyContent: 'center', margin: 2 }}>
+                            <Text style={{ color: 'white' }}>{index}</Text>
+                        </TouchableOpacity>
+                    )
+                }}
+            />
         </View>
     )
 }
