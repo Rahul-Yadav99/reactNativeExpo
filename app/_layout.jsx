@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tabs, useNavigation } from 'expo-router'
 import { FontAwesome } from '@expo/vector-icons'
-
+import '../global.css'
 const RootLayout = () => {
     return (
         <Tabs>
@@ -19,6 +19,7 @@ const RootLayout = () => {
                 name='about'
                 options={
                     {
+                        headerShown: false,
                         title: 'About',
                         tabBarIcon: ({ color, size }) => (<FontAwesome size={size} name='user' color={color} />)
                     }
