@@ -4,6 +4,10 @@ import ReactNativeModal from 'react-native-modal'
 
 const index = () => {
     const [visible, setVisible] = useState(false)
+    const arr = [1, 2, 3, 4, 5, 6]
+    for (let i = 0; i <= arr.length; i++) {
+        console.log(arr[i])
+    }
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa' }}>
@@ -19,7 +23,7 @@ const index = () => {
             >
                 <View className='bg-gradient-to-l from-fuchsia-600 to-blue-600 items-center justify-center' style={{ backgroundColor: 'white', height: 200, borderTopEndRadius: 20, borderTopStartRadius: 20 }}>
                     <Text className="text-blue-500 text-2xl font-semibold">Rahul yadav</Text>
-                    <ActivityIndicator size={'large'} color={'green'} />
+                    <ActivityIndicator size={'large'} color={'deeppink'} />
                 </View>
             </ReactNativeModal>
         </View>
