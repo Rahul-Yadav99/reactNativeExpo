@@ -1,33 +1,23 @@
-import { ActivityIndicator, Text, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react'
-import ReactNativeModal from 'react-native-modal'
-
-const index = () => {
-    const [visible, setVisible] = useState(false)
-    const arr = [1, 2, 3, 4, 5, 6]
-    for (let i = 0; i <= arr.length; i++) {
-        console.log(arr[i])
+import { Pressable, Text, TouchableOpacity, View } from 'react-native'
+import React from 'react'
+import { Link, useRouter } from 'expo-router'
+const Home = () => {
+    const router = useRouter()
+    const redirect = () => {
+        router.push('/profile')
     }
     return (
-        <View style={{ flex: 1 }}>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8f9fa' }}>
-                <TouchableOpacity className='bg-fuchsia-500 px-6 py-4 rounded-md' activeOpacity={0.8} onPress={() => setVisible(true)}>
-                    <Text style={{ color: 'white', fontSize: 16, fontWeight: 500 }}>Open Model</Text>
+        <View className='flex-1 bg-yellow-100 items-center justify-center'>
+            <TouchableOpacity activeOpacity={0.8} onPress={redirect} className='bg-fuchsia-500 px-5 py-2 rounded-lg'>
+                <Text className='text-white font-semibold text-2xl'>Redirect</Text>
+            </TouchableOpacity>
+            <Link href={'/about'} asChild>
+                <TouchableOpacity activeOpacity={0.8} className='bg-pink-500 p-3 mt-4 rounded-lg'>
+                    <Text className='text-white font-semibold'>Go to About page.</Text>
                 </TouchableOpacity>
-            </View>
-            <ReactNativeModal
-                isVisible={visible}
-                onBackdropPress={() => setVisible(false)}
-                onBackButtonPress={() => setVisible(false)}
-                style={{ justifyContent: 'flex-end', margin: 0 }}
-            >
-                <View className='bg-gradient-to-l from-fuchsia-600 to-blue-600 items-center justify-center' style={{ backgroundColor: 'white', height: 200, borderTopEndRadius: 20, borderTopStartRadius: 20 }}>
-                    <Text className="text-blue-500 text-2xl font-semibold">Rahul yadav</Text>
-                    <ActivityIndicator size={'large'} color={'deeppink'} />
-                </View>
-            </ReactNativeModal>
+            </Link>
         </View>
     )
 }
 
-export default index
+export default Home
