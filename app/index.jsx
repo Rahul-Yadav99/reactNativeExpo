@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, FlatList, ScrollView, Alert } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, FlatList, ScrollView, Alert, SafeAreaView } from 'react-native'
 import React, { useState } from 'react'
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
         setTodoList(todoList.filter((item) => item.id !== id))
     }
     return (
-        <View className='flex-1 bg-slate-300 p-6'>
+        <View className='flex-1 pt-10 px-5'>
             <Text className='text-3xl text-gray-700 text-center font-semibold'>📄TODO APP</Text>
             <View className='flex-row items-center justify-center gap-2 mt-4'>
                 <TextInput
