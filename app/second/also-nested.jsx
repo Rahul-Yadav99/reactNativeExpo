@@ -6,7 +6,7 @@ const AlsoN = () => {
   return (
     <View>
       <Text>also Screen</Text>
-      <Link href={'/second/nested'}>Go to index</Link>
+      <Link href={'/second/nested'}>Go to index.</Link>
     </View>
   )
 }
