@@ -4,7 +4,7 @@ import React from 'react'
 const FirstScreen = () => {
   return (
     <View>
-      <Text>First Screen.</Text>
+      <Text>First Screen</Text>
     </View>
   )
 }
