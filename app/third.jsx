@@ -5,6 +5,9 @@ const ThirdScreen = () => {
     return (
         <View>
             <Text>ThirdScreen</Text>
+            <Text>ThirdScreen</Text>
+            <Text>ThirdScreen</Text>
+            <Text>ThirdScreen</Text>
         </View>
     )
 }
