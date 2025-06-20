@@ -1,12 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const ThirdScreen = () => {
+export default function Settings() {
     return (
         <View>
-            <Text>nested Screen</Text>
+            <Text>Settings</Text>
         </View>
     )
 }
-
-export default ThirdScreen

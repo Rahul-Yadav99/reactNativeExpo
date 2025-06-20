@@ -1,12 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const ThirdScreen = () => {
+export default function Profile() {
     return (
         <View>
-            <Text>ThirdScreen.</Text>
+            <Text>Profile</Text>
         </View>
     )
 }
-
-export default ThirdScreen
