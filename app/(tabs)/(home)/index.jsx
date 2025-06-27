@@ -1,3 +1,4 @@
+import { CreateIconSet } from '@expo/vector-icons';
 import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Image, ActivityIndicator, TouchableOpacity, Alert } from 'react-native';
 
@@ -34,7 +35,7 @@ export default function HomeScreen() {
             <Text numberOfLines={1} style={styles.title}>{item.title}</Text>
             <Text style={styles.price}>₹{item.price}</Text>
             <TouchableOpacity activeOpacity={0.8} onPress={() => Alert.alert(item?.price.toString())}>
-                <Text>Add</Text>
+                <Text><CreateIconSet /></Text>
             </TouchableOpacity>
         </View>
     )
