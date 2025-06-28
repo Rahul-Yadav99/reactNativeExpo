@@ -35,7 +35,7 @@ export default function HomeScreen() {
             <Text numberOfLines={1} style={styles.title}>{item.title}</Text>
             <Text style={styles.price}>₹{item.price}</Text>
             <TouchableOpacity activeOpacity={0.8} onPress={() => Alert.alert(item?.price.toString())}>
-                <Text><CreateIconSet /></Text>
+                <Text>Add</Text>
             </TouchableOpacity>
         </View>
     )
